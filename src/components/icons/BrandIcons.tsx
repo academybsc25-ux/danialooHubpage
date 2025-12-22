@@ -47,3 +47,33 @@ export const RedotPayIcon = (props: SVGProps<SVGSVGElement>) => (
     <path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/>
   </svg>
 );
+
+export const MEXCIcon = (props: SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
+    <path d="M12 2L2 7v10l10 5 10-5V7L12 2zm0 2.18l7.27 3.64L12 11.45 4.73 7.82 12 4.18zM4 9.27l7 3.5v6.96l-7-3.5V9.27zm9 10.46v-6.96l7-3.5v6.96l-7 3.5z"/>
+  </svg>
+);
+
+export const CryptoBubblesIcon = (props: SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
+    <circle cx="8" cy="8" r="5" opacity="0.8"/>
+    <circle cx="16" cy="10" r="4" opacity="0.6"/>
+    <circle cx="10" cy="16" r="3" opacity="0.7"/>
+    <circle cx="17" cy="17" r="2.5" opacity="0.5"/>
+  </svg>
+);
+
+export const SmartContractIcon = (props: SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
+    <path d="M12 1.5l-8 4.5v9l8 4.5 8-4.5v-9l-8-4.5zm0 2.31l5.74 3.23L12 10.27 6.26 7.04 12 3.81zM5 8.38l6 3.38v6.86l-6-3.38V8.38zm8 10.24v-6.86l6-3.38v6.86l-6 3.38z"/>
+    <rect x="9" y="11" width="6" height="2" rx="0.5"/>
+    <rect x="10" y="14" width="4" height="1.5" rx="0.5"/>
+  </svg>
+);
+
+export const PaidCoursesIcon = (props: SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
+    <path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/>
+    <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/>
+  </svg>
+);

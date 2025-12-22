@@ -1,17 +1,18 @@
 import profileImage from "@/assets/danialoo-profile.jpg";
 import SocialLink from "@/components/SocialLink";
 import PartnerCard from "@/components/PartnerCard";
-import ExchangeButton from "@/components/ExchangeButton";
-import { Sparkles, GraduationCap, Bot, BarChart3 } from "lucide-react";
+import { Sparkles, Bot, BarChart3 } from "lucide-react";
 import { 
   TikTokIcon, 
   YouTubeIcon, 
   TelegramIcon, 
-  BitgetIcon, 
   BinanceIcon, 
   GateIcon, 
-  BybitIcon,
-  RedotPayIcon 
+  RedotPayIcon,
+  MEXCIcon,
+  CryptoBubblesIcon,
+  SmartContractIcon,
+  PaidCoursesIcon
 } from "@/components/icons/BrandIcons";
 
 const Index = () => {
@@ -22,17 +23,18 @@ const Index = () => {
   ];
 
   const partners = [
-    { href: "https://sol-cleaner.com/?ref=K2fS25GG_", name: "Sol Cleaner", description: "Clean up your Solana wallet", icon: <Sparkles className="w-6 h-6" /> },
-    { href: "https://100tokensacademy.site/", name: "100 Tokens Academy", description: "Learn crypto trading strategies", icon: <GraduationCap className="w-6 h-6" /> },
-    { href: "https://t.me/BlumCryptoTradingBot?start=FckH4EeI5m", name: "Blum Trading Bot", description: "Automated crypto trading", icon: <Bot className="w-6 h-6" /> },
-    { href: "https://app.telemetry.io/@91fib", name: "Telemetry", description: "Track your crypto portfolio", icon: <BarChart3 className="w-6 h-6" /> },
+    { href: "https://www.mexc.com/acquisition/custom-sign-up?shareCode=mexc-2rEsx", name: "MEXC", description: "Global crypto exchange", icon: <MEXCIcon className="w-6 h-6" /> },
+    { href: "https://www.gate.com/signup?ref_type=103&ref=UQARAF9X", name: "Gate.io", description: "Secure crypto trading platform", icon: <GateIcon className="w-6 h-6" /> },
+    { href: "https://accounts.binance.com/ar/register?ref=YL1K0MEE", name: "Binance", description: "World's largest crypto exchange", icon: <BinanceIcon className="w-6 h-6" /> },
+    { href: "https://100tokensacademy.site/", name: "100 Tokens Academy", description: "Learn crypto trading strategies", icon: <PaidCoursesIcon className="w-6 h-6" /> },
+    { href: "https://bnb-smart-contract-builder.vercel.app/", name: "BNB Smart Contract", description: "Build smart contracts easily", icon: <SmartContractIcon className="w-6 h-6" /> },
   ];
 
-  const exchanges = [
-    { href: "https://www.bitgetapps.com/referral/register?clacCode=FCZHCJKC&from=%2Fevents%2Freferral-all-program&source=events&utmSource=PremierInviter", name: "Bitget", color: "#00D4AA", icon: <BitgetIcon className="w-5 h-5" /> },
-    { href: "https://accounts.binance.com/ar/register?ref=YL1K0MEE", name: "Binance", color: "#F0B90B", icon: <BinanceIcon className="w-5 h-5" /> },
-    { href: "https://www.gate.com/signup?ref_type=103&ref=UQARAF9X", name: "Gate.io", color: "#17E6A1", icon: <GateIcon className="w-5 h-5" /> },
-    { href: "https://www.bybit.com/en/invite/?ref=ZDBA8ZL", name: "Bybit", color: "#F7A600", icon: <BybitIcon className="w-5 h-5" /> },
+  const tools = [
+    { href: "https://sol-cleaner.com/?ref=K2fS25GG_", name: "Sol Cleaner", description: "Clean up your Solana wallet", icon: <Sparkles className="w-6 h-6" /> },
+    { href: "https://app.telemetry.io/@91fib", name: "Telemetry", description: "Track your crypto portfolio", icon: <BarChart3 className="w-6 h-6" /> },
+    { href: "https://t.me/BlumCryptoTradingBot?start=FckH4EeI5m", name: "Blum Trading Bot", description: "Automated crypto trading", icon: <Bot className="w-6 h-6" /> },
+    { href: "https://cryptobubbles.net/", name: "Crypto Bubbles", description: "Visualize crypto market movements", icon: <CryptoBubblesIcon className="w-6 h-6" /> },
   ];
 
   return (
@@ -77,10 +79,28 @@ const Index = () => {
           </div>
         </section>
 
+        {/* Paid Courses Section */}
+        <section className="mb-16 animate-fade-in" style={{ animationDelay: "0.3s" }}>
+          <h2 className="font-display text-2xl font-semibold text-center mb-8 text-foreground">
+            My <span className="text-primary glow-text">Paid Courses</span>
+          </h2>
+          <div className="flex justify-center">
+            <a
+              href="https://t.me/danialoocrypto/2927"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-cyber flex items-center gap-3 text-lg px-8 py-4"
+            >
+              <PaidCoursesIcon className="w-7 h-7" />
+              <span>Access Premium Courses</span>
+            </a>
+          </div>
+        </section>
+
         {/* Partners Section */}
         <section className="mb-16 animate-fade-in" style={{ animationDelay: "0.4s" }}>
           <h2 className="font-display text-2xl font-semibold text-center mb-8 text-foreground">
-            Tools & <span className="text-secondary glow-text-pink">Partners</span>
+            My <span className="text-secondary glow-text-pink">Partners</span>
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-3xl mx-auto">
             {partners.map((partner) => (
@@ -89,14 +109,14 @@ const Index = () => {
           </div>
         </section>
 
-        {/* Crypto Exchanges */}
-        <section className="mb-16 animate-fade-in" style={{ animationDelay: "0.6s" }}>
+        {/* Tools Section */}
+        <section className="mb-16 animate-fade-in" style={{ animationDelay: "0.5s" }}>
           <h2 className="font-display text-2xl font-semibold text-center mb-8 text-foreground">
-            Trade on <span className="text-primary glow-text">Top Exchanges</span>
+            Crypto <span className="text-primary glow-text">Tools</span>
           </h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
-            {exchanges.map((exchange) => (
-              <ExchangeButton key={exchange.name} {...exchange} />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-3xl mx-auto">
+            {tools.map((tool) => (
+              <PartnerCard key={tool.name} {...tool} />
             ))}
           </div>
         </section>
