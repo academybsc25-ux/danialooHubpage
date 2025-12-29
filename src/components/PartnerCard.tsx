@@ -5,9 +5,10 @@ interface PartnerCardProps {
   name: string;
   description: string;
   icon?: ReactNode;
+  iconUrl?: string;
 }
 
-const PartnerCard = ({ href, name, description, icon }: PartnerCardProps) => {
+const PartnerCard = ({ href, name, description, icon, iconUrl }: PartnerCardProps) => {
   return (
     <a
       href={href}
@@ -16,7 +17,11 @@ const PartnerCard = ({ href, name, description, icon }: PartnerCardProps) => {
       className="card-cyber group block"
     >
       <div className="flex items-start gap-4">
-        {icon && <span className="text-3xl text-primary">{icon}</span>}
+        {iconUrl ? (
+          <img src={iconUrl} alt={name} className="w-8 h-8 object-contain rounded" />
+        ) : icon ? (
+          <span className="text-3xl text-primary">{icon}</span>
+        ) : null}
         <div className="flex-1">
           <h3 className="font-display text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
             {name}

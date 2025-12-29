@@ -1,44 +1,72 @@
 import profileImage from "@/assets/danialoo-profile.jpg";
 import SocialLink from "@/components/SocialLink";
 import PartnerCard from "@/components/PartnerCard";
+import ComingSoonLink from "@/components/ComingSoonLink";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
+import { useLanguage } from "@/contexts/LanguageContext";
 import { Sparkles, Bot, BarChart3 } from "lucide-react";
 import { 
   TikTokIcon, 
   YouTubeIcon, 
   TelegramIcon, 
-  BinanceIcon, 
-  GateIcon, 
   RedotPayIcon,
-  MEXCIcon,
   CryptoBubblesIcon,
   SmartContractIcon,
-  PaidCoursesIcon
+  PaidCoursesIcon,
+  InstagramIcon,
+  XTwitterIcon,
+  DiscordIcon
 } from "@/components/icons/BrandIcons";
 
+// Partner logo URLs
+const partnerLogos = {
+  mexc: "https://foldr.space/f/H6ck3TiG876nApvS/mexc-logo-png.png",
+  gate: "https://foldr.space/f/kTz28zOAbHY9TXnS/screenshot-2025-12-22-160414.jpg",
+  binance: "https://cryptologos.cc/logos/binance-coin-bnb-logo.png",
+  academy: "https://100tokensacademy.site/favicon.ico",
+  smartContract: "",
+};
+
 const Index = () => {
+  const { t, isRTL } = useLanguage();
+
   const socialLinks = [
     { href: "https://www.tiktok.com/@danialoo5", icon: <TikTokIcon className="w-6 h-6" />, label: "TikTok", color: "secondary" as const },
     { href: "https://youtube.com/@danialoocrypto", icon: <YouTubeIcon className="w-6 h-6" />, label: "YouTube", color: "primary" as const },
     { href: "https://t.me/danialoocrypto", icon: <TelegramIcon className="w-6 h-6" />, label: "Telegram", color: "primary" as const },
   ];
 
+  const comingSoonLinks = [
+    { icon: <InstagramIcon className="w-6 h-6" />, label: "Instagram" },
+    { icon: <XTwitterIcon className="w-6 h-6" />, label: "X (Twitter)" },
+    { icon: <DiscordIcon className="w-6 h-6" />, label: "Discord" },
+  ];
+
   const partners = [
-    { href: "https://www.mexc.com/acquisition/custom-sign-up?shareCode=mexc-2rEsx", name: "MEXC", description: "Global crypto exchange", icon: <MEXCIcon className="w-6 h-6" /> },
-    { href: "https://www.gate.com/signup?ref_type=103&ref=UQARAF9X", name: "Gate.io", description: "Secure crypto trading platform", icon: <GateIcon className="w-6 h-6" /> },
-    { href: "https://accounts.binance.com/ar/register?ref=YL1K0MEE", name: "Binance", description: "World's largest crypto exchange", icon: <BinanceIcon className="w-6 h-6" /> },
-    { href: "https://100tokensacademy.site/", name: "100 Tokens Academy", description: "Learn crypto trading strategies", icon: <PaidCoursesIcon className="w-6 h-6" /> },
-    { href: "https://bnb-smart-contract-builder.vercel.app/", name: "BNB Smart Contract", description: "Build smart contracts easily", icon: <SmartContractIcon className="w-6 h-6" /> },
+    { href: "https://www.mexc.com/acquisition/custom-sign-up?shareCode=mexc-2rEsx", name: "MEXC", description: t("mexcDesc"), iconUrl: partnerLogos.mexc },
+    { href: "https://www.gate.com/signup?ref_type=103&ref=UQARAF9X", name: "Gate.io", description: t("gateDesc"), iconUrl: partnerLogos.gate },
+    { href: "https://accounts.binance.com/ar/register?ref=YL1K0MEE", name: "Binance", description: t("binanceDesc"), iconUrl: partnerLogos.binance },
+    { href: "https://100tokensacademy.site/", name: "100 Tokens Academy", description: t("academyDesc"), icon: <PaidCoursesIcon className="w-6 h-6" /> },
+    { href: "https://bnb-smart-contract-builder.vercel.app/", name: "BNB Smart Contract", description: t("smartContractDesc"), icon: <SmartContractIcon className="w-6 h-6" /> },
   ];
 
   const tools = [
-    { href: "https://sol-cleaner.com/?ref=K2fS25GG_", name: "Sol Cleaner", description: "Clean up your Solana wallet", icon: <Sparkles className="w-6 h-6" /> },
-    { href: "https://app.telemetry.io/@91fib", name: "Telemetry", description: "Track your crypto portfolio", icon: <BarChart3 className="w-6 h-6" /> },
-    { href: "https://t.me/BlumCryptoTradingBot?start=FckH4EeI5m", name: "Blum Trading Bot", description: "Automated crypto trading", icon: <Bot className="w-6 h-6" /> },
-    { href: "https://cryptobubbles.net/", name: "Crypto Bubbles", description: "Visualize crypto market movements", icon: <CryptoBubblesIcon className="w-6 h-6" /> },
+    { href: "https://sol-cleaner.com/?ref=K2fS25GG_", name: "Sol Cleaner", description: t("solCleanerDesc"), icon: <Sparkles className="w-6 h-6" /> },
+    { href: "https://app.telemetry.io/@91fib", name: "Telemetry", description: t("telemetryDesc"), icon: <BarChart3 className="w-6 h-6" /> },
+    { href: "https://t.me/BlumCryptoTradingBot?start=FckH4EeI5m", name: "Blum Trading Bot", description: t("blumDesc"), icon: <Bot className="w-6 h-6" /> },
+    { href: "https://cryptobubbles.net/", name: "Crypto Bubbles", description: t("bubblesDesc"), icon: <CryptoBubblesIcon className="w-6 h-6" /> },
+  ];
+
+  const projects = [
+    { href: "https://100tokensacademy.site/", name: "100Academy", description: "المنصة الرئيسية لعملة 100", iconUrl: "https://i.ibb.co/W4Z1tF48/Academy-Logo.png" },
+    { href: "https://www.100presale.site/", name: "Academy BSC Presale", description: "أكتتاب عملة 100 أكاديمي ", iconUrl: "https://i.ibb.co/mFvZy9XD/Screenshot-2025-12-29-150002.jpg" },
   ];
 
   return (
-    <div className="min-h-screen bg-background cyber-grid relative overflow-hidden">
+    <div className={`min-h-screen bg-background cyber-grid relative overflow-hidden ${isRTL ? "rtl" : "ltr"}`} dir={isRTL ? "rtl" : "ltr"}>
+      {/* Language Switcher */}
+      <LanguageSwitcher />
+
       {/* Background effects */}
       <div className="fixed inset-0 pointer-events-none">
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[150px] animate-pulse-glow" />
@@ -63,18 +91,21 @@ const Index = () => {
           </h1>
           
           <p className="text-lg md:text-xl text-muted-foreground max-w-lg mx-auto">
-            Crypto Influencer & Educator
+            {t("cryptoInfluencer")}
           </p>
         </header>
 
         {/* Social Media Links */}
         <section className="mb-16 animate-fade-in" style={{ animationDelay: "0.2s" }}>
           <h2 className="font-display text-2xl font-semibold text-center mb-8 text-foreground">
-            Connect With Me
+            {t("connectWithMe")}
           </h2>
-          <div className="flex flex-wrap justify-center gap-4 max-w-2xl mx-auto">
+          <div className="flex flex-wrap justify-center gap-4 max-w-3xl mx-auto">
             {socialLinks.map((link) => (
               <SocialLink key={link.label} {...link} />
+            ))}
+            {comingSoonLinks.map((link) => (
+              <ComingSoonLink key={link.label} {...link} />
             ))}
           </div>
         </section>
@@ -82,7 +113,7 @@ const Index = () => {
         {/* Paid Courses Section */}
         <section className="mb-16 animate-fade-in" style={{ animationDelay: "0.3s" }}>
           <h2 className="font-display text-2xl font-semibold text-center mb-8 text-foreground">
-            My <span className="text-primary glow-text">Paid Courses</span>
+            {t("paidCourses").split(" ")[0]} <span className="text-primary glow-text">{t("paidCourses").split(" ").slice(1).join(" ")}</span>
           </h2>
           <div className="flex justify-center">
             <a
@@ -92,15 +123,27 @@ const Index = () => {
               className="btn-cyber flex items-center gap-3 text-lg px-8 py-4"
             >
               <PaidCoursesIcon className="w-7 h-7" />
-              <span>Access Premium Courses</span>
+              <span>{t("accessPremiumCourses")}</span>
             </a>
+          </div>
+        </section>
+
+        {/* My Projects Section */}
+        <section className="mb-16 animate-fade-in" style={{ animationDelay: "0.35s" }}>
+          <h2 className="font-display text-4xl font-semibold text-center mb-8 text-foreground">
+            <span className="text-secondary glow-text-pink">مشاريعي</span>
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-3xl mx-auto">
+            {projects.map((project) => (
+              <PartnerCard key={project.name} {...project} />
+            ))}
           </div>
         </section>
 
         {/* Partners Section */}
         <section className="mb-16 animate-fade-in" style={{ animationDelay: "0.4s" }}>
           <h2 className="font-display text-2xl font-semibold text-center mb-8 text-foreground">
-            My <span className="text-secondary glow-text-pink">Partners</span>
+            <span className="text-secondary glow-text-pink">{t("myPartners")}</span>
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-3xl mx-auto">
             {partners.map((partner) => (
@@ -112,7 +155,7 @@ const Index = () => {
         {/* Tools Section */}
         <section className="mb-16 animate-fade-in" style={{ animationDelay: "0.5s" }}>
           <h2 className="font-display text-2xl font-semibold text-center mb-8 text-foreground">
-            Crypto <span className="text-primary glow-text">Tools</span>
+            <span className="text-primary glow-text">{t("cryptoTools")}</span>
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-3xl mx-auto">
             {tools.map((tool) => (
@@ -124,7 +167,7 @@ const Index = () => {
         {/* Payment Platform */}
         <section className="animate-fade-in" style={{ animationDelay: "0.8s" }}>
           <h2 className="font-display text-2xl font-semibold text-center mb-8 text-foreground">
-            Payment <span className="text-secondary glow-text-pink">Solutions</span>
+            <span className="text-secondary glow-text-pink">{t("paymentSolutions")}</span>
           </h2>
           <div className="flex justify-center">
             <a
@@ -142,7 +185,7 @@ const Index = () => {
         {/* Footer */}
         <footer className="mt-20 pt-8 border-t border-border/30 text-center">
           <p className="text-muted-foreground text-sm">
-            © 2025 Danialoo Crypto. All rights reserved.
+            © 2025 Danialoo Crypto. {t("allRightsReserved")}.
           </p>
         </footer>
       </div>
